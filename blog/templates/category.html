@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% load custom_markdown %}
+{% block content %}
+<div class="posts">
+    {% for post in post_list %}
+                       <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>
+    {% endfor %}
+</div><!-- /.blog-post -->
+{% endblock %}

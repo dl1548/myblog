@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load custom_markdown %}
+
+
+{% block content %}
+
+<div class="posts">
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">{{ detail.title }}</h2>
+                    <p class="post-meta">
+                        创建时间: <a class="post-author" href="#">{{ detail.date_time|date:"Y /m /d"}}</a>
+                        <a class="post-category post-category-js" href="#">{{ detail.category }}</a>
+                    </p>
+            </header>
+                <div class="post-description">
+                    <p>
+                      {{ detail.content|custom_markdown }}
+                    </p>
+                </div>
+         <div id="SOHUCS" sid={{ detail.id }}></div>
+        </section>
+</div><!-- /.blog-post -->
+{% endblock %}
